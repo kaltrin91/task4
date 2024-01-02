@@ -1,8 +1,20 @@
   name: workflow_1
-  on:
-    push:
-      branches: main
+  on: push
   jobs:
-    test:
+    deploy:
       runs-on: ubuntu latest
+      steps:
+        - name: Get COde
+          uses: actions/checkout@v3
+        - name: Install Dependencies
+          run: npm ci
+        - name: Lint
+          run: npm run lint
+        - name: Test Code
+          run: npm run test
+        - name: build Code
+          run: npm run build
+        - name: Deploy Code
+          run: echo "Deploying"
+
 
