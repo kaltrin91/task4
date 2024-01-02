@@ -22,10 +22,6 @@
     deploy:
       runs-on: ubuntu latest
       steps:
-
-    deploy:
-      runs-on: ubuntu latest
-      steps:
         - name: Get COde
           uses: actions/checkout@v3
         - name: Install Dependencies
